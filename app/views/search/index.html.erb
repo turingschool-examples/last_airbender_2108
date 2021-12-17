@@ -1,0 +1,13 @@
+<h1>Total Members of <%= @nation %>: <%= @total_members %></h1>
+<% @members.each do |member| %>
+  <div id="<%= member.name.downcase %>">
+
+    <h2><%= member.name %></h2>
+    <% unless member.image.nil? %>
+      <br><%= image_tag("#{member.image}", :alt => "Image of #{member.name}") %>
+    <% end %>
+    <p>Allies: <%= member.allies %></p>
+    <p>Enemies: <%= member.enemies %></p>
+    <p>Affiliations: <%= member.affiliation %></p>
+  </div>
+<% end %>
