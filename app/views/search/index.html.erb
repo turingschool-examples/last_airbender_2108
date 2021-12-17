@@ -1,0 +1,13 @@
+<% @benders.each do |bender| %>
+  Name: <%= bender.name %><br>
+  Image: <% if params[:photo].present? %>
+    <%= bender.photo %>
+  <% end %>
+  Affiliations: <%= bender.affiliation %><br>
+  Enemies: <% bender.enemies.each do |enemy| %>
+    <%= enemy %><br>
+  <% end %>
+  Allies: <% bender.allies.each do |ally| %>
+    <%= ally %><br>
+  <% end %>
+<% end %>

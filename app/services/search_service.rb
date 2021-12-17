@@ -1,7 +1,7 @@
-class AirbenderService
+class SearchService
   class << self
     def conn
-      conn = Faraday.new(url: 'https://last-airbender-api.herokuapp.com/')
+      conn = Faraday.new(url: 'https://last-airbender-api.herokuapp.com')
     end
 
     def get_data(url)
