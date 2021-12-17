@@ -1,0 +1,17 @@
+<%= @members.count %> Members
+
+<% @detailed_list.each do |member| %>
+  <div>
+    Name: <%= member.name %>
+    Affiliation: <%= member.affiliation %>
+    Allies: <% member.allies.each do |ally| %>
+              <%= ally %>
+            <% end %>
+    Enemies: <% member.enemies.each do |enemy| %>
+               <%= enemy %>
+             <% end %>
+    <% if member.photoUrl != nil %>
+      <%= image_tag member.photoUrl%>
+    <% end %>
+  </div>
+<% end %>
