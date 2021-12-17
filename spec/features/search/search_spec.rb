@@ -15,7 +15,6 @@ RSpec.describe 'Search', type: :feature do
       select 'Fire Nation'
 
       click_button 'Search For Members'
-      save_and_open_page
       
       expect(page).to have_content('Total Found: 97')
       expect(page).to have_content('Chan (Fire Nation admiral')
