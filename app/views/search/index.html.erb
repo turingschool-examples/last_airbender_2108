@@ -1,1 +1,21 @@
-<h1>This is filler</h1>
+<p>Total Found: <%= @characters.length %></p>
+<p>Showing First 25:</p>
+<% @first_twenty_five.each do |character|%>
+    <img src="#{character[:photoUrl]}">
+  <p>Name: <%= character[:name] %></p>
+  <p>Allies: <% character[:allies].each do |ally| %></p>
+    <% if ally.empty? %>
+      <p><%= "None" %></p>
+    <% else %>
+      <p><%= ally %></p>
+    <% end %>
+  <% end %>
+  <p>Enemies:<p><% character[:enemies].each do |enemy| %></p>
+    <% if enemy.empty? %>
+      <%= "None" %>
+    <% else %>
+      <p><%= enemy %><p>
+    <% end %>
+  <% end %>
+  <p>Affiliation: <%= character[:affiliation] %></p>
+<% end %>
