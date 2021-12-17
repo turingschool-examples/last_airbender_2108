@@ -11,7 +11,7 @@ class NationService
   end
 
   def self.air_nomads_members
-    nation_members("/api/v1/characters?affiliation=Air+Nomads&perPage=500&page=1")
+    nation_members("/api/v1/characters?affiliation=Air+Nomad&perPage=500&page=1")
   end
 
   def self.earth_kingdom_members
