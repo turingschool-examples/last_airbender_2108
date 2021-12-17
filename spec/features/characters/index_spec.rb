@@ -5,7 +5,7 @@ RSpec.describe 'character page' do
     it 'shows a list of characters and their data' do
       visit '/'
 
-      select "Fire Nation"
+      select "Fire Nation", from: :nation
 
       expect(page.status_code).to eq 200
       expect(page).to have_content("Fire Nation")
