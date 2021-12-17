@@ -86,32 +86,4 @@ def member_data
     "affiliation": "Fire Nation",
     "first": "Avatar: The Last Airbender Trading Card Game"
 }
-
-end
-
-def fire_nation_data
-    [
-    {
-    "_id": "5cf5679a915ecad153ab68fd",
-    "allies": [
-    "Ozai"
-    ],
-    "enemies": [
-    "Earth Kingdom"
-    ],
-    "name": "Chan (Fire Nation admiral)",
-    "affiliation": "Fire Nation Navy"
-    },
-    {
-    "_id": "5cf5679a915ecad153ab6906",
-    "allies": [
-    "Ty Lee"
-    ],
-    "enemies": [
-    "Appa"
-    ],
-    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819",
-    "name": "Circus master",
-    "affiliation": "Fire Nation circus"
-    }]
 end

@@ -1,5 +1,5 @@
 class Member
-  attr_reader :name, :id, :photo, :allies, :enemies, :affilliations
+  attr_reader :name, :id, :photo, :allies, :enemies, :affiliations
 
   def initialize(member)
     @name = member[:name]
@@ -7,6 +7,6 @@ class Member
     @photo = member[:photoUrl]
     @allies = member[:allies]
     @enemies = member[:enemies]
-    @affilliations = member[:affilliation]
+    @affiliations = member[:affiliation]
   end
 end

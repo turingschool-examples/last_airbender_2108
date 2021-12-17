@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+<p>Nation: <%= params[:nation].gsub('_'," ").capitalize %>
+<p>Number of members: <%= @members.count %></p>
+<% @members.each do |m| %>
+<p>Name: <%= m.name %><br>
+<img src=<%= m.photo %> alt="Picture of this member" width="200" ><br>
+Allies: <%= m.allies.to_s.delete! '[]"' %><br>
+Enemies: <%= m.enemies.to_s.delete! '[]"' %><br>
+Affiliations: <%= m.affiliations %></p><br>
+<% end %>

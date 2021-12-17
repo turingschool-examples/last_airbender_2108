@@ -1,14 +1,9 @@
 class MemberService
   def self.all_members(nation)
-  content = conn.get("/api/v1/characters?affilliation=#{nation}")
-  content2 = conn.get("/api/v1/characters?affilliation=#{nation}/perPage=100&page=2")
-  results = (parse_response(content))[:results]
-  results2 = (parse_response(content2))[:results]
-
-  (results << results2).flatten!
-
+  content = conn.get("api/v1/characters?affiliation=#{nation}")
+  results = (parse_response(content))
   results.map do |m|
-    Movie.new(m)
+    Member.new(m)
   end
 end
 
@@ -19,7 +14,7 @@ end
   end
 
   def self.parse_response(response)
-    JSON.parse(response, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.conn
