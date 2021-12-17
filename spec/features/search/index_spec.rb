@@ -25,4 +25,29 @@ RSpec.describe 'Search Index page' do
     expect(page).to have_content("Allies: Aang")
     expect(page).to have_content("Enemies: Combustion Man")
   end
+
+  it 'displays the total number of people that live in the selected nation' do
+    visit root_path
+    select 'Air Nomads', from: :nation
+    click_button 'Search For Members'
+
+    expect(current_path).to eq(search_path)
+    expect(page).to have_content("97 Members")
+  end
+
+  it 'displays detailed information about the first 25 members' do
+    visit root_path
+    select 'Fire Nation', from: :nation
+    click_button 'Search For Members'
+
+    expect(page).to have_content("Name: Aang (pilot)")
+    expect(page).to have_content("Affiliation: Air Nomads Team Avatar")
+    expect(page).to have_content("Allies: Kya")
+    expect(page).to have_content("Enemies: Zuko")
+
+    expect(page).to have_content("Name: Momo")
+    expect(page).to have_content("Affiliation: Air Nomads Team Avatar")
+    expect(page).to have_content("Allies: Aang")
+    expect(page).to have_content("Enemies: Ozai")
+  end
 end
