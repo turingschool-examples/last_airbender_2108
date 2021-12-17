@@ -1,5 +1,3 @@
-require './app/facades/nation_facade'
-
 class SearchController < ApplicationController
   def index
     if params[:nation] == 'fire_nation'

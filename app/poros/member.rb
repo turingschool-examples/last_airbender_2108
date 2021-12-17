@@ -1,5 +1,3 @@
-# require './app/facades/nation_facade'
-
 class Member
   attr_reader :_id,
               :name,
