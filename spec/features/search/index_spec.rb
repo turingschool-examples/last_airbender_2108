@@ -15,21 +15,27 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Index' do
-  it 'returns the results of a search by nation' do
+  before :each do
     visit '/'
     select 'Fire Nation', from: :nation
     click_button "Search For Members"
-
+  end
+  it 'returns the results of a search by nation' do
     expect(current_path).to eq("/search")
     expect(page).to have_content("Members of the Fire Nation")
   end
 
   it 'gives a count of total population' do
-    visit '/'
-    select 'Fire Nation', from: :nation
-    click_button "Search For Members"
-    save_and_open_page
     expect(current_path).to eq("/search")
     expect(page).to have_content("Total Population:")
+  end
+
+  it 'displays the characters attributes' do
+    within("#mem-Circus master") do
+      expect(page).to have_content("Name: Circus master")
+      expect(page).to have_content("Allies: Ty Lee")
+      expect(page).to have_content("Enemies: Appa")
+      expect(page).to have_content("Affiliations: Fire Nation circus")
+    end
   end
 end

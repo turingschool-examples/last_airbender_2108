@@ -1,38 +1,40 @@
 <!-- update this to be dynamic to nation selected -->
-<h1> Members of the Fire Nation </h1>
+<h1> Members of the <%= @members.first.nation %> </h1>
 
 Total Population: <%= @members.count %><hr>
 
 <% @members.each do |member| %>
-  <p>Name:<%= member[:name] %></p>
-  <% if member[:photoUrl] != nil %>
+<section id="mem-<%= member.name %>"
+  <p>Name:<%= member.name %></p>
+  <% if member.photoUrl != nil %>
     Photo:<br>
-    <img src="<%= member[:photoUrl] %>" alt="<%= member[:name] %>"><br>
+    <img src="<%= member.photoUrl %>" alt="<%= member.name %>"><br>
   <% end %>
 <br>
-  <% if member[:allies].nil? %>
+  <% if member.allies.nil? %>
     Allies: None
   <% else %>
     Allies:<br>
-    <% member[:allies].each do |ally| %>
+    <% member.allies.each do |ally| %>
       <%= ally %><br>
     <% end %>
   <% end %>
 <br>
-  <% if member[:enemies].nil? %>
+  <% if member.enemies.nil? %>
       Enemies: None<br>
   <% else %>
     Enemies: <br>
-    <% member[:enemies].each do |enemy| %>
+    <% member.enemies.each do |enemy| %>
       <%= enemy %><br>
     <% end %>
   <% end %>
 <br>
-  <% if member[:affiliation].nil? %>
+  <% if member.affiliations.nil? %>
     Affiliations: None <br>
   <% else %>
     Affiliations:<br>
-    <%= member[:affiliation] %>
+    <%= member.affiliations %>
   <% end %>
+</section>
 <hr>
 <% end %>
