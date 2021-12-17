@@ -6,14 +6,14 @@ RSpec.describe "benders", type: :feature do
       visit "/"
 
       select 'Fire Nation', from: :nation
-      click_on 'Search for Members'
+      click_on 'Search For Members'
     end
 
-    xit "takes me to a search page" do
+    it "takes me to a search page" do
       expect(current_path).to eq("/search")
     end
 
-    xit "shows me the total number of people in the Fire Nation" do  #should be close to 100
+    it "shows me the total number of people in the Fire Nation" do  #should be close to 100
       expect(page).to have_content("some number")
     end
 

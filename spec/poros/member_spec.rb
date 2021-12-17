@@ -5,7 +5,7 @@ RSpec.describe Member do
 
     member = Member.new(member_data_for_test[0])
 
-    expect(member.affiliations).to eq("Fire Nation Navy")
+    expect(member.affiliation).to eq("Fire Nation Navy")
     expect(member.allies).to include("Ozai")
     expect(member.enemies).to eq(["Earth Kingdom"])
     expect(member.name).to eq("Chan (Fire Nation admiral)")
