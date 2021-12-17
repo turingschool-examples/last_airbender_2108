@@ -4,6 +4,7 @@ RSpec.describe "benders", type: :feature do
   describe "as a user, when I visit welcome page ('/')" do
     before(:each) do
       visit "/"
+
       select 'Fire Nation', from: :nation
       click_on 'Search for Members'
     end
@@ -18,7 +19,7 @@ RSpec.describe "benders", type: :feature do
 
     xit "shows me a list with detailed information for the first 25 members" do
       expect(page).to have_content("")
-      
+
     end
   end
 end
