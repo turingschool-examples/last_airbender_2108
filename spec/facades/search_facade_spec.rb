@@ -17,7 +17,6 @@ RSpec.describe 'Search Facade' do
   it 'returns a count of all benders' do
     response = SearchFacade.total_benders
 
-    expect(response.first).to be_a(Airbender)
-
+    expect(response.count).to be_a(100)
   end
 end

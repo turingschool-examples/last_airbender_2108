@@ -14,7 +14,7 @@ class SearchFacade
     def total_benders
       @all_fire_benders = []
       all_benders = SearchService.get_data("api/v1/characters")
-
+  
       all_benders.each do |bender|
         if bender[:affiliation].include?("Fire Nation")
           @all_fire_benders << bender
