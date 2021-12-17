@@ -13,8 +13,7 @@ class SearchService
     end
 
     def parse_data(response)
-      binding.pry
-      JSON.parse(response.body, symbolize_names: true)
+      test = JSON.parse(response.body, symbolize_names: true)
     end
   end
 end
