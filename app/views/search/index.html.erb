@@ -1,0 +1,23 @@
+<% @characters[0..25].each do |character| %>
+<h4><%= character.name %></h4>
+
+<img src ="<%= character.photo_url %>">
+<h5>Allies:</h5>
+<% character.allies.each do |ally| %>
+  <p><%= ally %></p>
+  <% end %>
+<h5>Enemies:</h5>
+<% character.enemies.each do |enemy| %>
+  <p><%= enemy %></p>
+<% end %>
+<h5>Affiliation:</h5>
+  <%= character.affiliation %>
+<% end %>
+
+<% @characters[26..-1].each do |character| %>
+
+<h4><%= character.name %></h4>
+
+<p>Affiliation:</p>
+  <%= character.affiliation %>
+<% end %>

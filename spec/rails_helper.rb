@@ -64,3 +64,13 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+
+def character_data
+  {:_id=>"5cf5679a915ecad153ab68fc",
+  :allies=>["Admiral Chan"],
+  :enemies=>["Azula"],
+  :photoUrl=>"https://vignette.wikia.nocookie.net/avatar/images/9/9d/Chan.png/revision/latest?cb=20140908141053",
+  :name=>"Chan",
+  :affiliation=>"Fire Nation"}
+end
