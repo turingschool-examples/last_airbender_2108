@@ -3,7 +3,7 @@ class CharacterService
     Faraday.new('https://last-airbender-api.herokuapp.com/')
   end
 
-  def self.parse(url, params)
+  def self.parse(url, params = nil)
     response = conn.get(url, params)
     JSON.parse(response.body, symbolize_names: true)
   end

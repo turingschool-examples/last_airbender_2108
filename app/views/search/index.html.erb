@@ -1,7 +1,7 @@
-Total members of <%= @members[:nation] %>: <%= @members[:total_count] %>
+Total members of <%= @members[:nation] %>: <%= @members[:count] %>
 <hr>
 
-<% @members[:members].each do |member| %>
+<% @members[:characters].each do |member| %>
   Name: <%= member[:name] %><br>
   <% if member[:photoUrl] %>
     <img src=<%= member[:photoUrl] %>><br>
