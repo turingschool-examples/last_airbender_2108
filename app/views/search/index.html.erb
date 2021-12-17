@@ -1,5 +1,4 @@
-Total members of <%= @members[0][:affiliation] %>: <%= @members.count %>
-
+Total members of <%= params[:nation].sub('_', ' ').titleize %>: <%= @total_members_count %>
 <hr>
 
 <% @members.each do |member| %>
@@ -8,20 +7,20 @@ Total members of <%= @members[0][:affiliation] %>: <%= @members.count %>
     <img src=<%= member[:photoUrl] %>><br>
   <% end %>
   Allies:
-  <% if member[:allies] %>
+  <% if member[:allies] != [] %>
     <% member[:allies].each do |ally| %>
       <%= ally %>
-    <% end %><br>
+    <% end %>
   <% else %>
-    "None"
-  <% end %>
+    None
+  <% end %><br>
   Enemies:
-  <% if member[:enemies] %>
+  <% if member[:enemies] != [] %>
     <% member[:enemies].each do |enemy| %>
       <%= enemy %>
     <% end %>
   <% else %>
-    "None"
+    None
   <% end %><br>
   <% if member[:affiliations] %>
     Affliation(s): <%= member[:affiliations] %>
