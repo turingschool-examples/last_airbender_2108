@@ -1,16 +1,20 @@
 <% @characters.each do |character| %>
+  <% if character.photo.present? %>
+    <%= image_tag character.photo %>
+  <% end %>
+
   <p><b><%= character.name %></b></p>
 
   <% if character.allies.empty? %>
       <p>Allies: <%= 'None' %>
     <% else %>
-      <p>Allies: <%= character.allies %></p>
+      <p>Allies: <%= character.allies.join(', ') %></p>
   <% end %>
 
   <% if character.enemies.empty? %>
       <p>Enemies: <%= 'None' %></p>
     <% else %>
-      <p>Enemies: <%= character.enemies %></p>
+      <p>Enemies: <%= character.enemies.join(', ') %></p>
   <% end %>
 
   <p><%= character.affiliation %></p>
