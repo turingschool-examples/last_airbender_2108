@@ -1,7 +1,9 @@
-<h3><%= @members %></h3>
+<h3>Total Members: <%= @members.count %></h3>
 
-Name: <br>
-Photo: <br>
-Allies: <br>
-Enemies: <br>
-Affiliations: <br>
+<% @first_25.each do |member| %>
+  Name: <%= member[:name] %><br>
+  Photo: <%= member[:photoUrl] %><br>
+  Allies: <%= member[:allies] %><br>
+  Enemies: <%= member[:enemies] %><br><br>
+  Affiliations: <%= member[:affiliation] %><br><br>
+<% end %><br><br>

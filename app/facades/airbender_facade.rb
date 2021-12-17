@@ -1,11 +1,13 @@
 class AirbenderFacade
   def self.search_members_by_nation(nation)
-    AirbenderService.search_nation(nation)
-    # search_nation = AirbenderService.search_nation(nation)
+    searched = AirbenderService.search_nation("#{nation}")
+    member = searched.map do |data|
+      Member.new(data)
+    end
+    member
+  end
 
-    # member_objects = search_nation[:foods].map do |nation|
-    #   Member.new(nation)
-    # end
-    # {total_hits: search_nation[:totalHits], foods: food_objects}
+  def self.first_25(nation)
+    AirbenderService.search_nation("#{nation}&perPage=25&page=1")
   end
 end

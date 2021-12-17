@@ -5,10 +5,11 @@ RSpec.describe 'Nation Search' do
     visit root_path
     select "Fire Nation"
     click_on "Search For Members"
-    save_and_open_page
   end
 
   it 'has attributes' do
+    @members = AirbenderFacade.search_members_by_nation('fire+nation')
+
     expect(page).to have_content("Name:")
     expect(page).to have_content("Photo:")
     expect(page).to have_content("Allies:")
@@ -17,7 +18,7 @@ RSpec.describe 'Nation Search' do
   end
 
 
-  xit 'can get to searched results page successfully' do
+  it 'can get to searched results page successfully' do
     expect(page.status_code).to eq 200
     expect(current_path).to eq(search_path)
   end

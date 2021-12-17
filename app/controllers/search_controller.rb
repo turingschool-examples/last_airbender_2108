@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
-    @members = AirbenderFacade.search_members_by_nation(params[:nation])
-    # require "pry"; binding.pry
+    nation = params[:nation]
+    @first_25 = AirbenderFacade.first_25("nation")
+    @members = AirbenderFacade.search_members_by_nation("nation")
   end
 end
