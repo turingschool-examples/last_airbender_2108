@@ -1,0 +1,24 @@
+<h1>Welcome To the Search Page!</h1>
+<h2>The total number of people in the nation are:</h2>
+
+<h2>Member Information:</h2>
+
+<% @members.each do |member| %>
+
+  <% if member.allies == [] %>
+    <% allies = "None" %>
+  <% else %>
+    <% allies = member.allies %>
+  <% end %>
+
+  <% if member.enemies == [] %>
+    <% enemies = "None" %>
+  <% else %>
+    <% enemies = member.enemies %>
+  <% end %>
+  Name:        <%= member.name  %><br>
+  Photo URL:   <%= member.photo  %><br>
+  Allies:      <%= allies  %><br>
+  Enemies:     <%= enemies  %><br>
+  Affiliation: <%= member.affiliation %><br><br><br>
+<% end  %>

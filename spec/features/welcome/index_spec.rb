@@ -11,9 +11,10 @@ RSpec.describe "benders", type: :feature do
 
     it "takes me to a search page" do
       expect(current_path).to eq("/search")
+      save_and_open_page
     end
 
-    it "shows me the total number of people in the Fire Nation" do  #should be close to 100
+    xit "shows me the total number of people in the Fire Nation" do  #should be close to 100
       expect(page).to have_content("some number")
     end
 
