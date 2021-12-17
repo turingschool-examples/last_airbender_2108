@@ -73,3 +73,43 @@ VCR.configure do |config|
     config.filter_sensitive_data("Hide My Key") { ENV["govt_api_key"] }  #if you want to hide the key in the cassete
     config.configure_rspec_metadata!  #it will name the cassette automatically under the folder of spec test name, with folder named with the test name.
 end
+
+def member_data_for_test
+  [
+    {
+    "_id": "5cf5679a915ecad153ab68fd",
+    "allies": [
+    "Ozai"
+    ],
+    "enemies": [
+    "Earth Kingdom"
+    ],
+    "name": "Chan (Fire Nation admiral)",
+    "affiliation": "Fire Nation Navy"
+    },
+    {
+    "_id": "5cf5679a915ecad153ab6906",
+    "allies": [
+    "Ty Lee"
+    ],
+    "enemies": [
+    "Appa"
+    ],
+    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819",
+    "name": "Circus master",
+    "affiliation": "Fire Nation circus"
+    },
+    {
+    "_id": "5cf5679a915ecad153ab68ee",
+    "allies": [
+    "Ozai"
+    ],
+    "enemies": [
+    "Zuko"
+    ],
+    "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/7/76/Bujing.png/revision/latest?cb=20130714152817",
+    "name": "Bujing",
+    "affiliation": "Fire Nation military"
+    }
+    ]
+end
