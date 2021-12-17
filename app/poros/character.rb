@@ -5,7 +5,7 @@ class Character
               :affiliation,
               :photoUrl
 
-  def initialize(data)
+  def initialize(data, allies: 'None', enemies: 'None', affiliation: 'None')
     @name         = data[:name]
     @allies       = data[:allies].join(", ")
     @enemies      = data[:enemies].join(", ")
