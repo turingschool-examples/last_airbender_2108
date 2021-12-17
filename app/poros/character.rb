@@ -7,8 +7,8 @@ class Character
 
   def initialize(data)
     @name         = data[:name]
-    @allies       = data[:allies]
-    @enemies      = data[:enemies]
+    @allies       = data[:allies].join(", ")
+    @enemies      = data[:enemies].join(", ")
     @affiliation  = data[:affiliation]
     @photoUrl    = data[:photoUrl]
   end

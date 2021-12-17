@@ -64,3 +64,19 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+end
+
+def character_data
+   {:_id=>"5cf5679a915ecad153ab6906",
+    :allies=>["Ty Lee"],
+    :enemies=>["Appa"],
+    :photoUrl=>
+     "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819",
+    :name=>"Circus master",
+    :affiliation=>"Fire Nation circus"}
+end
