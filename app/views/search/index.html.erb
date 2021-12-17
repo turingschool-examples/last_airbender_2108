@@ -1,0 +1,17 @@
+<% @characters.each do |character| %>
+  <p><b><%= character.name %></b></p>
+
+  <% if character.allies.empty? %>
+      <p>Allies: <%= 'None' %>
+    <% else %>
+      <p>Allies: <%= character.allies %></p>
+  <% end %>
+
+  <% if character.enemies.empty? %>
+      <p>Enemies: <%= 'None' %></p>
+    <% else %>
+      <p>Enemies: <%= character.enemies %></p>
+  <% end %>
+
+  <p><%= character.affiliation %></p>
+<% end %>
