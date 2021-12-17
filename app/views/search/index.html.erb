@@ -1,3 +1,16 @@
 <h1><%= @nation %></h1>
 
 <p>Total Members: <%= @total %></p>
+
+<% @members.each do |member| %>
+  <% unless member.photoUrl.nil? %>
+  <%= image_tag("#{member.photoUrl}") %>
+  <% end %>
+  <h3><%= member.name %></h3>
+  <p>Allies: <%= member.allies.join(", ") %></p>
+  <p>Enemies: <%= member.enemies.join(", ") %></p>
+  <p>Affiliations: <%= member.affiliation %></p>
+  <br>
+  <br>
+  <hr>
+<% end %>

@@ -10,6 +10,6 @@ class Character
     @allies       = data[:allies]
     @enemies      = data[:enemies]
     @affiliation  = data[:affiliation]
-    @photo_url    = data[:photoUrl]
+    @photoUrl    = data[:photoUrl]
   end
 end

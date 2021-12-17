@@ -7,6 +7,6 @@ class CharacterService
   end
 
   def self.fire_nation
-    get_data("https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire+nation")
+    get_data("https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire+nation&perPage=999")
   end
 end
