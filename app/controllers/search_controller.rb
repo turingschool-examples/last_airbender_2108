@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    require 'pry'; binding.pry
+    @characters = SearchFacade.search_results(params[:nation])
   end
 end
