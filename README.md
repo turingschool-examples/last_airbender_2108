@@ -50,78 +50,41 @@ And for each of the members I should see:
 example
 GET /api/v1/characters?affiliation=NATION+NAME
 get characters with a specific affiliation
-
+# https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire+nation
 Choices: Fire Nation, Water Tribe, Earth Kingdom, and more!
 [
-{
-"_id": "5cf5679a915ecad153ab68fd",
-"allies": [
-"Ozai"
-],
-"enemies": [
-"Earth Kingdom"
-],
-"name": "Chan (Fire Nation admiral)",
-"affiliation": "Fire Nation Navy"
-},
-{
-"_id": "5cf5679a915ecad153ab6906",
-"allies": [
-"Ty Lee"
-],
-"enemies": [
-"Appa"
-],
-"photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819",
-"name": "Circus master",
-"affiliation": "Fire Nation circus"
-},
-{
-"_id": "5cf5679a915ecad153ab68ee",
-"allies": [
-"Ozai"
-],
-"enemies": [
-"Zuko"
-],
-"photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/7/76/Bujing.png/revision/latest?cb=20130714152817",
-"name": "Bujing",
-"affiliation": "Fire Nation military"
-},
-{
-"_id": "5cf5679a915ecad153ab68cc",
-"allies": [
-"Fire Nation"
-],
-"enemies": [
-"Aang"
-],
-"photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128",
-"name": "Afiko",
-"affiliation": "Fire Nation"
-},
-{
-"_id": "5cf5679a915ecad153ab68fc",
-"allies": [
-"Admiral Chan"
-],
-"enemies": [
-"Azula",
-""
-],
-"photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/9/9d/Chan.png/revision/latest?cb=20140908141053",
-"name": "Chan",
-"affiliation": "Fire Nation"
-},
-{
-"_id": "5cf5679a915ecad153ab6907",
-"allies": [
-"Circus master"
-],
-"enemies": [
-"Appa"
-],
-"photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/b/bd/Circus_trainer.png/revision/latest?cb=20130705125545",
-"name": "Circus trainer",
-"affiliation": "Fire Nation circus"
-},
+    {
+        "_id": "5cf5679a915ecad153ab68fd",
+        "allies": [
+            "Ozai"
+        ],
+        "enemies": [
+            "Earth Kingdom"
+        ],
+        "name": "Chan (Fire Nation admiral)",
+        "affiliation": "Fire Nation Navy"
+    },
+    {
+        "_id": "5cf5679a915ecad153ab6906",
+        "allies": [
+            "Ty Lee"
+        ],
+        "enemies": [
+            "Appa"
+        ],
+        "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/a/a5/Circus_master.png/revision/latest?cb=20130706153819",
+        "name": "Circus master",
+        "affiliation": "Fire Nation circus"
+    },
+    {
+        "_id": "5cf5679a915ecad153ab68ee",
+        "allies": [
+            "Ozai"
+        ],
+        "enemies": [
+            "Zuko"
+        ],
+        "photoUrl": "https://vignette.wikia.nocookie.net/avatar/images/7/76/Bujing.png/revision/latest?cb=20130714152817",
+        "name": "Bujing",
+        "affiliation": "Fire Nation military"
+    },

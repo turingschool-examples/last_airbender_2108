@@ -1,19 +1,17 @@
 require 'rails_helper'
 # ber spec/services/airbender_service_spec.rb
 RSpec.describe 'Last Airbender API' do
-  it 'gets members' do
-    response = AirebenderService.nation_data('/nation')
-# https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire+nation
-    expect(response).to be_a(Hash)
+  it 'returns nation specific data' do
+    response = AirbenderService.search_nation("fire+nation")
 
-    expect(response[:data]).to be_an(Array)
-
-    # response[:data].each do |park|
-    #   expect(park[:id]).to be_a String
-    #   expect(park[:fullName]).to be_a String
-    #   expect(park[:description]).to be_a String
-    #   expect(park[:directionsInfo]).to be_a String
-    #   expect(park[:states]).to be_a String
-    # end
+    expect(response).to be_an Array
+    expect(response[0]).to be_a Hash
+    
+    expect(response[0]).to have_key :_id
+    expect(response[0]).to have_key :allies
+    expect(response[0]).to have_key :enemies
+    expect(response[0]).to have_key :name
+    expect(response[0]).to have_key :affiliation
+    # expect(response[0]).to have_key :photoUrl
   end
 end
