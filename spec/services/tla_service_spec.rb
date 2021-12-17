@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Character' do
   it 'can get characters affiliated with a specific team', :vcr do
-    response = TlaService.affiliated_characters("Fire Nation")
-
+    response = TlaService.affiliated_characters("fire_nation")
+    
     expect(response).to be_an Array
     expect(response.count).to eq(97)
     expect(response[1]).to be_a Hash
