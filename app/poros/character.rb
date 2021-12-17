@@ -12,4 +12,8 @@ class Character
     @enemies = data[:enemies]
     @affiliation = data[:affiliation]
   end
+
+  def hyphenated_name
+    @name.split.join("-")
+  end
 end

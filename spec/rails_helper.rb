@@ -71,6 +71,6 @@ def character_data
   :allies=>["Admiral Chan"],
   :enemies=>["Azula"],
   :photoUrl=>"https://vignette.wikia.nocookie.net/avatar/images/9/9d/Chan.png/revision/latest?cb=20140908141053",
-  :name=>"Chan",
+  :name=>"Ember Island Players",
   :affiliation=>"Fire Nation"}
 end

@@ -1,5 +1,5 @@
 <% @characters[0..25].each do |character| %>
-<div id="character-<%= character.name.split.join("-") %>">
+<div id="character-<%= character.hyphenated_name %>">
 <h4><%= character.name %></h4>
 
 <img src ="<%= character.photo_url %>">
@@ -26,7 +26,7 @@
 <% end %>
 
 <% @characters[26..-1].each do |character| %>
-<div id="character-<%= character.name.split.join("-") %>">
+<div id="character-<%= character.hyphenated_name %>">
 <h4><%= character.name %></h4>
 
 <p>Affiliation:</p>
