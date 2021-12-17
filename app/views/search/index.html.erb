@@ -2,7 +2,7 @@
 
 Total Members = <%= @characters.count %>
 
-<% @characters.each do |character| %>
+<% @characters[0..24].each do |character| %>
   <%= character.id %>
   <%= character.allies %>
   <%= character.enemies %>

@@ -5,7 +5,7 @@ class SearchService
     end
 
     def fire_nation
-      get_url("characters?affiliation=Fire+Nation")
+      get_url("characters?affiliation=Fire+Nation&perPage=1000&page=NUMBER")
     end
 
     def conn
