@@ -1,25 +1,26 @@
-<%= @members.count %> Members
+<h3><%= @members.count %> Members</h3>
 
 <% @detailed_list.each do |member| %>
   <div>
-    Name: <%= member.name %>
-    Affiliation: <%= member.affiliation %>
+    <% if member.photoUrl != nil %>
+      <%= image_tag member.photoUrl%>
+    <% end %><br>
+    Name: <%= member.name %><br>
+    Affiliation: <%= member.affiliation %><br>
     <% if member.allies == [] %>
       Allies: None
     <% else %>
       Allies: <% member.allies.each do |ally| %>
                 <%= ally %>
               <% end %>
-    <% end %>
+    <% end %><br>
     <% if member.enemies == [] %>
       Enemies: None
     <% else %>
       Enemies: <% member.enemies.each do |enemy| %>
                 <%= enemy %>
               <% end %>
-    <% end %>
-    <% if member.photoUrl != nil %>
-      <%= image_tag member.photoUrl%>
-    <% end %>
-  </div>
+    <% end %><br>
+  </div><br>
+  ---------------------------------------------------------------------------
 <% end %>
