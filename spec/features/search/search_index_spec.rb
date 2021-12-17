@@ -9,11 +9,20 @@ RSpec.describe "Search Page" do
 
   it 'shows a count of all characters for that nation' do
     visit "/search"
-    # get "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Fire+Nation"
+    characters = SearchFacade.fire_nation
 
+    expect(page).to have_content(characters.count)
   end
 
-  xit  'shows the first 25 members and their attributes' do
+  it  'shows the first 25 members and their attributes' do
+    visit "/search"
+    characters = SearchFacade.fire_nation
+
+    expect(page).to have_content(characters[0].id)
+    expect(page).to have_content(characters[0].allies)
+    expect(page).to have_content(characters[0].enemies)
+    expect(page).to have_content(characters[0].name)
+    expect(page).to have_content(characters[0].affiliation)
   end
 end
 #
