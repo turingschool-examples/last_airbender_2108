@@ -4,12 +4,20 @@
   <div>
     Name: <%= member.name %>
     Affiliation: <%= member.affiliation %>
-    Allies: <% member.allies.each do |ally| %>
-              <%= ally %>
-            <% end %>
-    Enemies: <% member.enemies.each do |enemy| %>
-               <%= enemy %>
-             <% end %>
+    <% if member.allies == [] %>
+      Allies: None
+    <% else %>
+      Allies: <% member.allies.each do |ally| %>
+                <%= ally %>
+              <% end %>
+    <% end %>
+    <% if member.enemies == [] %>
+      Enemies: None
+    <% else %>
+      Enemies: <% member.enemies.each do |enemy| %>
+                <%= enemy %>
+              <% end %>
+    <% end %>
     <% if member.photoUrl != nil %>
       <%= image_tag member.photoUrl%>
     <% end %>
