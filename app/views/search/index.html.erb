@@ -9,7 +9,7 @@ Total Population: <%= @members.count %><hr>
     Photo:<br>
     <img src="<%= member[:photoUrl] %>" alt="<%= member[:name] %>"><br>
   <% end %>
-
+<br>
   <% if member[:allies].nil? %>
     Allies: None
   <% else %>
@@ -18,7 +18,7 @@ Total Population: <%= @members.count %><hr>
       <%= ally %><br>
     <% end %>
   <% end %>
-
+<br>
   <% if member[:enemies].nil? %>
       Enemies: None<br>
   <% else %>
@@ -27,14 +27,12 @@ Total Population: <%= @members.count %><hr>
       <%= enemy %><br>
     <% end %>
   <% end %>
-
-  <% if member[:affliation].nil? %>
-    Affliations: None <br>
+<br>
+  <% if member[:affiliation].nil? %>
+    Affiliations: None <br>
   <% else %>
-    Affliations:<br>
-    <% member[:affliation].each do |aff| %>
-      <%= aff %><br>
-    <% end %>
+    Affiliations:<br>
+    <%= member[:affiliation] %>
   <% end %>
-
+<hr>
 <% end %>
