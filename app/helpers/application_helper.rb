@@ -6,5 +6,5 @@ module ApplicationHelper
           ['Fire Nation', 'fire_nation'],
           ['Water Tribes', 'water_tribes'],
         ]
-      end
+    end
 end
