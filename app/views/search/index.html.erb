@@ -4,27 +4,29 @@ Number of members: <%= @members.length %><br>
 <h2>Members:</h2>
 
 <% @members.each_with_index do |member, index| %>
-  <h3><%= member.name %></h3>
-  <% if member.photo %>
-    <img src=<%= member.photo %>><br>
-  <% end %>
-    Allies:
-  <% if member.allies %>
-      <% member.allies.each do |ally| %>
-        <ul><li><%= ally %></li></ul><br>
-      <% end %>
-  <% else %>
-    None<br>
-  <% end %>
-    Enemies:
-  <% if member.enemies %>
-      <% member.enemies.each do |enemy| %>
-        <ul><li><%= enemy %></li></ul><br>
-      <% end %>
-  <% else %>
-    None<br>
-  <% end %>
-  Affiliation: <%= member.affiliation %>
+  <div id="member-<%=index%>">
+    <h3><%= member.name %></h3>
+    <% if member.photo %>
+      <img src=<%= member.photo %>><br>
+    <% end %>
+      Allies:
+    <% if member.allies %>
+        <% member.allies.each do |ally| %>
+          <ul><li><%= ally %></li></ul><br>
+        <% end %>
+    <% else %>
+      None<br>
+    <% end %>
+      Enemies:
+    <% if member.enemies %>
+        <% member.enemies.each do |enemy| %>
+          <ul><li><%= enemy %></li></ul><br>
+        <% end %>
+    <% else %>
+      None<br>
+    <% end %>
+    Affiliation: <%= member.affiliation %>
+  </div>
   <% break if index == 24 %>
   <hr>
 <% end %>
