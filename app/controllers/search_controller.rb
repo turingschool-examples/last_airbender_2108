@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index 
     @characters = CharacterFacade.get_all_characters(get_nation_name)
+    binding.pry
   end 
 
   private 
