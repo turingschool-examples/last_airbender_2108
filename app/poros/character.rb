@@ -8,16 +8,16 @@ class Character
   def initialize(char_info)
     @name = char_info[:name]
     @allies = if char_info[:allies].length != 0 
-        char_info[:allies] 
+        char_info[:allies].join
       else 
         'None' 
       end 
     @enemies = if char_info[:enemies].length != 0
-        char_info[:enemies]
+        char_info[:enemies].join
       else 
         'None' 
       end 
-    @affliations = if char_info[:affiliation].length != 0 
+    @affiliation = if char_info[:affiliation].length != 0 
         char_info[:affiliation]
       else 
         'None' 

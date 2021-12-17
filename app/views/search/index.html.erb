@@ -1,14 +1,15 @@
 Total Members: <%= @characters.length %><br>
-
+<br>
 Member Info: 
 <% count = 0 %>
 <% @characters.each do |character| %>
   <% break if count >= 25 %>
-  <%= image_tag character.image %><br>
+  <%= image_tag character.image if character.image %><br>
   Name: <%= character.name %><br>
   Allies: <%= character.allies %><br>
   Enemies: <%= character.enemies %><br>
   Affiliations: <%= character.affiliation %><br>
+  <% count += 1 %>
   <br>
   <br>
 <% end %>
