@@ -23,4 +23,13 @@ RSpec.describe 'Search Index' do
     expect(current_path).to eq("/search")
     expect(page).to have_content("Members of the Fire Nation")
   end
+
+  it 'gives a count of total population' do
+    visit '/'
+    select 'Fire Nation', from: :nation
+    click_button "Search For Members"
+    save_and_open_page
+    expect(current_path).to eq("/search")
+    expect(page).to have_content("Total Population:")
+  end
 end

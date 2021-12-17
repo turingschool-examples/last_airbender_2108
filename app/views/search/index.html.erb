@@ -1,2 +1,40 @@
 <!-- update this to be dynamic to nation selected -->
 <h1> Members of the Fire Nation </h1>
+
+Total Population: <%= @members.count %><hr>
+
+<% @members.each do |member| %>
+  <p>Name:<%= member[:name] %></p>
+  <% if member[:photoUrl] != nil %>
+    Photo:<br>
+    <img src="<%= member[:photoUrl] %>" alt="<%= member[:name] %>"><br>
+  <% end %>
+
+  <% if member[:allies].nil? %>
+    Allies: None
+  <% else %>
+    Allies:<br>
+    <% member[:allies].each do |ally| %>
+      <%= ally %><br>
+    <% end %>
+  <% end %>
+
+  <% if member[:enemies].nil? %>
+      Enemies: None<br>
+  <% else %>
+    Enemies: <br>
+    <% member[:enemies].each do |enemy| %>
+      <%= enemy %><br>
+    <% end %>
+  <% end %>
+
+  <% if member[:affliation].nil? %>
+    Affliations: None <br>
+  <% else %>
+    Affliations:<br>
+    <% member[:affliation].each do |aff| %>
+      <%= aff %><br>
+    <% end %>
+  <% end %>
+
+<% end %>
