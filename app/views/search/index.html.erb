@@ -1,7 +1,7 @@
 <% @characters.each do |character| %>
-  <%= character[:name] %><br>
-  <%= character[:allies] %><br>
-  <%= character[:enemies] %><br>
-  <%= character[:affiliations] %><br>
+  Name: <%= character[:name] %><br>
+  Allies: <%= character[:allies] %><br>
+  Enemies: <%= character[:enemies] %><br>
+  Affiliations: <%= character[:affiliations] %><br>
   <%= character[:image] %><br>
 <% end  %>
