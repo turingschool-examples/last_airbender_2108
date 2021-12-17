@@ -1,0 +1,29 @@
+Total members of <%= @members[0][:affiliation] %>: <%= @members.count %>
+
+<hr>
+
+<% @members.each do |member| %>
+  Name: <%= member[:name] %><br>
+  <% if member[:photoUrl] %>
+    <img src=<%= member[:photoUrl] %>><br>
+  <% end %>
+  Allies:
+  <% if member[:allies] %>
+    <% member[:allies].each do |ally| %>
+      <%= ally %>
+    <% end %><br>
+  <% else %>
+    "None"
+  <% end %>
+  Enemies:
+  <% if member[:enemies] %>
+    <% member[:enemies].each do |enemy| %>
+      <%= enemy %>
+    <% end %>
+  <% else %>
+    "None"
+  <% end %><br>
+  <% if member[:affiliations] %>
+    Affliation(s): <%= member[:affiliations] %>
+  <% end %><hr>
+<% end %>
