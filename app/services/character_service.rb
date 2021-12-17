@@ -1,7 +1,7 @@
 class CharacterService
   class << self
 
-    def get_fire
+    def fire
       response = conn.get("/api/v1/characters?affiliation=NATION+FIRE")
       parse_data(response)
     end
