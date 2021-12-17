@@ -1,23 +1,35 @@
 <% @characters[0..25].each do |character| %>
+<div id="character-<%= character.name.split.join("-") %>">
 <h4><%= character.name %></h4>
 
 <img src ="<%= character.photo_url %>">
 <h5>Allies:</h5>
-<% character.allies.each do |ally| %>
-  <p><%= ally %></p>
-  <% end %>
-<h5>Enemies:</h5>
-<% character.enemies.each do |enemy| %>
-  <p><%= enemy %></p>
+<% if character.allies.empty? %>
+  <p> None </p>
+ <% else %>
+  <% character.allies.each do |ally| %>
+    <p><%= ally %></p>
+    <% end %>
 <% end %>
+<h5>Enemies:</h5>
+<% if character.enemies.empty? %>
+  <p> None </p>
+ <% else %>
+  <% character.enemies.each do |enemy| %>
+      <p><%= enemy %></p>
+  <% end %>
+<% end %>
+
 <h5>Affiliation:</h5>
   <%= character.affiliation %>
+  </div>
 <% end %>
 
 <% @characters[26..-1].each do |character| %>
-
+<div id="character-<%= character.name.split.join("-") %>">
 <h4><%= character.name %></h4>
 
 <p>Affiliation:</p>
   <%= character.affiliation %>
+  </div>
 <% end %>

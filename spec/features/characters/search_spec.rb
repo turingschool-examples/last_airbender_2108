@@ -14,9 +14,18 @@ RSpec.describe 'Character search' do
   end
 
   it 'does not have detailed information past the first 25 characters' do
-    expect(page).to have_content("Jee")
-    expect(page).to have_content("Fire Nation Navy")
-    
-    expect(page).not_to have_css("img[src*='Jee.png']")
+    within '#character-Jee' do
+      expect(page).to have_content("Jee")
+      expect(page).to have_content("Fire Nation Navy")
+
+      expect(page).not_to have_css("img[src*='Jee.png']")
+    end
+  end
+
+  it 'has the word none if no allies or enemies' do 
+    within "#character-Ember-Island-Players" do
+      expect(page).to have_content("Allies:\nNone")
+      expect(page).to have_content("Enemies:\nNone")
+    end
   end
 end
