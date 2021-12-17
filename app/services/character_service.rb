@@ -5,4 +5,8 @@ class CharacterService
     data = response.body
     JSON.parse(data, symbolize_names:  true)
   end
+
+  def self.fire_nation
+    get_data("https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire+nation")
+  end
 end
