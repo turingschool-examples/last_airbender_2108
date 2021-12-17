@@ -2,11 +2,11 @@ class Member
   attr_reader :name, :id, :photo, :allies, :enemies, :affilliations
 
   def initialize(member)
-    @name = member[:attributes][:name]
-    @id = member[:id]
-    @photo = member[:attributes][:photo]
-    @allies = member[:attributes][:allies]
-    @enemies = member[:attributes][:enemies]
-    @affilliations = member[:attributes][:affilliations]
+    @name = member[:name]
+    @id = member[:_id]
+    @photo = member[:photoUrl]
+    @allies = member[:allies]
+    @enemies = member[:enemies]
+    @affilliations = member[:affilliation]
   end
 end

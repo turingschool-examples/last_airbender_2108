@@ -1,40 +1,17 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
-# FactoryBot.find_definitions
 
-RSpec.describe 'Landing Page' do
-  it 'has the title of the application' do
-    visit '/'
-    expect(page).to have_content('Viewing Party Lite')
-  end
+RSpec.describe 'Search Page' do
 
-  it 'has a button to create a new user' do
+
+  it 'lists the members who live in a nation' do
+    members = (fire_nation_data.each do |o|
+                  Member.new(o)
+                end)
     visit '/'
-    expect(page).to have_button('Create a New User')
+    select "Fire Nation", :from => "nation"
     click_button
-    expect(current_path).to eq('/register')
+    expect(page).to have_content("Chan (Fire Nation admiral)")
+    expect(page).to have_content("Circus master")
   end
 
-  it 'has a link to home' do
-    visit '/'
-    expect(page).to have_link('Home')
-    click_link('Home')
-    expect(current_path).to eq('/')
-    visit '/register'
-    expect(page).to have_link('Home')
-    click_link('Home')
-    expect(current_path).to eq('/')
-  end
-
-  it 'lists current users' do
-    user_1 = create(:user)
-    user_2 = create(:user)
-    visit '/'
-
-    expect(page).to have_link("#{user_1.email}'s Dashboard")
-    expect(page).to have_link("#{user_2.email}'s Dashboard")
-    click_link("#{user_1.email}'s Dashboard")
-    expect(current_path).to eq("/users/#{user_1.id}")
-  end
 end

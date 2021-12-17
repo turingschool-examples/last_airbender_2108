@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @members = MembersService.all_members
+    @members = MemberService.all_members(params[:affilliation])
   end
 
 end
