@@ -8,6 +8,7 @@ RSpec.describe 'character page' do
       expect(page.status_code).to eq 200
       expect(page).to have_content("Azulon")
       expect(page).to have_content("High Sage")
+      expect(page).to have_content("Aang")
     end
   end
 end
