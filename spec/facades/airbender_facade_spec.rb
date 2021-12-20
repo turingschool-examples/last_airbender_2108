@@ -5,6 +5,7 @@ RSpec.describe 'Airbender Facade' do
     members = AirbenderFacade.search_members_by_nation("fire+nation")
 
     expect(members.count).to eq(20)
+    #this should be close to 100
     expect(members).to be_an(Array)
     # expect(members[0]).to be_a(Hash)
     # expect(members[0]).to have_key :allies
@@ -23,6 +24,8 @@ RSpec.describe 'Airbender Facade' do
     expect(first_25.count).to eq(25)
   end
   xit 'returns a member object from search' do
-    # expect(member).to be_a Member
+    members = AirbenderFacade.search_members_by_nation("fire+nation")
+
+    expect(member).to be_a Member
   end
 end

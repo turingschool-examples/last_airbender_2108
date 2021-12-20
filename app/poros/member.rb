@@ -10,4 +10,8 @@ class Member
     @enemies = data[:enemies]
     @affiliation = data[:affiliation]
   end
+
+  def no_allies(allies)
+    @allies
+  end
 end
