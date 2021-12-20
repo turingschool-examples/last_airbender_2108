@@ -11,18 +11,20 @@ RSpec.describe 'welcome page' do
     expect(page).to have_button("Search For Members")
   end
 
-  it 'can search for members by their Nation' do
+  it 'can search for members by their Nation successfully' do
     select "Fire Nation"
     click_on "Search For Members"
 
     expect(page.status_code).to eq 200
+
     expect(current_path).to eq(search_path)
   end
+
   it 'returns info on selected nation' do
     select "Fire Nation"
     click_on "Search For Members"
 
     expect(page).to have_content("Fire Nation")
-    expect(page).to have_content("Total Members:")
+    expect(page).to have_content("Total Members: 97")
   end
 end

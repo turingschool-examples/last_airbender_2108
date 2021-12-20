@@ -1,9 +1,12 @@
-<h3>Total Members: <%= @members.count %></h3>
-
-<% @first_25.each do |member| %>
-  Name: <%= member[:name] %><br>
-  Photo: <%= member[:photoUrl] %><br>
-  Allies: <%= member[:allies] %><br>
-  Enemies: <%= member[:enemies] %><br><br>
-  Affiliations: <%= member[:affiliation] %><br><br>
-<% end %><br><br>
+<div id='nation-data'>
+  <h3>Total Members: <%= @members.count %></h3>
+  <% @members[0..24].each do |member| %>
+    <div id='member-<%= member.name %>'>
+      Name: <%= member.name %><br>
+      Allies: <%= member.format_allies %><br>
+      Enemies: <%= member.format_enemies %><br>
+      Affiliations: <%= member.affiliation %><br>
+      <img src=<%= member.photoUrl %>><br><br>
+    </div>
+  <% end %><br><br>
+</div>

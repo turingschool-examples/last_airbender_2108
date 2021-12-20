@@ -1,9 +1,11 @@
 class SearchController < ApplicationController
   def index
-    @nation = params[:nation]
-    @first_25 = AirbenderFacade.first_25("nation")
-    @members = AirbenderFacade.search_members_by_nation("nation")
+    @members = AirbenderFacade.members(search_params)
   end
 
-  #consider private method to return formatted searched nation
+  private
+
+  def search_params
+    params[:nation].gsub("_", "+")
+  end
 end

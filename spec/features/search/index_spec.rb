@@ -1,5 +1,5 @@
 require 'rails_helper'
-# rspec spec/features/search/index_spec.rb
+# ber spec/features/search/index_spec.rb
 RSpec.describe 'Nation Search' do
   before :each do
     visit root_path
@@ -7,41 +7,47 @@ RSpec.describe 'Nation Search' do
     click_on "Search For Members"
   end
 
-  it 'has attributes' do
-    @members = AirbenderFacade.search_members_by_nation('fire+nation')
+  it 'has total number of people who live in fire nation' do
+    expect(page).to have_content("Total Members: 97")
 
-    expect(page).to have_content("Name:")
-    expect(page).to have_content("Photo:")
-    expect(page).to have_content("Allies:")
-    expect(page).to have_content("Enemies:")
-    expect(page).to have_content("Affiliations:")
+    within '#nation-data' do
+      expect(page).to have_content("Total Members: 97")
+    end
   end
 
+  it 'lists attributes for each of the first 25 members in fire nation' do
+    expect(page).to have_content("Name:", count: 25)
+    expect(page).to have_content("Allies:", count: 25)
+    expect(page).to have_content("Enemies:", count: 25)
+    expect(page).to have_content("Affiliations:", count: 25)
+    
+    expect(page).to_not have_content("Affiliations: Earth Kingdom")
+    expect(page).to_not have_content("Affiliations: Air Nomads")
+    expect(page).to_not have_content("Affiliations: Water Tribes")
 
-  it 'can get to searched results page successfully' do
-    expect(page.status_code).to eq 200
-    expect(current_path).to eq(search_path)
+    within "#member-Chan" do
+      expect(page).to have_content("Name: Chan")
+      expect(page).to have_content("Allies: Admiral Chan")
+      expect(page).to have_content("Enemies: Azul")
+      expect(page).to have_content("Affiliations: Fire Nation")
+      expect(page).to have_css('img')
+    end
   end
 
-  xit 'returns total results for searched nation' do
-    expect(page).to have_content('')
-    expect(page).to have_content('')
-    expect(page).to have_content('')
-    expect(page).to have_content('')
-    expect(page).to have_content('')
+  it "lists 'None' when member has no enemies" do
+    within "#member-Elua" do
+      expect(page).to have_content("Name: Elua")
+      expect(page).to have_content("Allies: Ozai")
+      expect(page).to have_content("Enemies: None")
+      expect(page).to have_content("Affiliations: Fire Nation")
+      expect(page).to have_css('img')
+    end
   end
 
-  xit 'returns top 25 members in searched nation' do
+  it 'returns "None" for no allies or no enemies' do
+    member = Member.new(name: "Elua", allies: [], enemies: [], affiliation: "Fire Nation")
+
+    expect(member.format_allies).to eq("None")
+    expect(member.format_enemies).to eq("None")
   end
 end
-# <h3>Total Results: <%= @members %></h3>
-#
-# <% @members[:members][0..24].each do |member| %>
-#   Name: <%= member.name %><br>
-#   Photo: <%= member.photoUrl %><br>
-#   Allies: <%= member.allies %><br>
-#   Enemies: <%= member.enemies %><br><br>
-#   Affiliations: <%= member.affiliation %><br><br>
-# <% end %><br><br>
-
-# <% end %><br><br>
