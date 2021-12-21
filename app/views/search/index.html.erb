@@ -1,22 +1,18 @@
 <h1>There are <%= @members.count %> members of the <%= @view_nation %></h1>
 
   <% @members.each do |member| %>
-    <%= member.name %></h3>
+    <h3>Name: <%= member.name %></h3>
     <%= image_tag("#{member.photo}") %>
 
-    <ul>
-    <% member.allies.each do |ally| %>
-        <li><%= ally %></li>
-    <% end %>
-    <ul>
 
-      <ul>
-      <% member.enemies.each do |enemy| %>
+    <h4>Allies: <% member.allies.each do |ally| %>
+          <li><%= ally %></li>
+        <% end %>
+
+    <h4>Enemies: <% member.enemies.each do |enemy| %>
           <li><%= enemy %></li>
-      <% end %>
-      <ul>
+        <% end %>
 
-    <%= member.affiliation %>
-
+    <h4>Affliliation: <%= member.affiliation %>
 
   <% end  %>
