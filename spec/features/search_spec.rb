@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'user can search for airbender members' do
+RSpec.describe 'user can search for airbender members' do
   it 'should show Fire Nation Members and their data' do
     visit '/'
 
@@ -8,7 +8,7 @@ RSpec.feature 'user can search for airbender members' do
     click_on 'Search For Members'
 
     expect(current_path).to eq('/search')
-
+  
     expect(page).to have_content('There are 20 members of the Fire Nation')
 
     expect(page).to have_content("Chan (Fire Nation admiral)")

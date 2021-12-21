@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Last Airbender API' do
-  describe 'happy path' do
-    xit 'can get details by affiliation' do
-      response = MemberService.member_information('Fire Nation')
+RSpec.describe MemberService do
+    it 'can get details by affiliation' do
+      response = MemberService.nation_members('Fire Nation')
 
       expect(response).to be_a Array
+      expect(response.count).to eq(20)
 
       first_member = response.first
 
@@ -17,7 +17,5 @@ RSpec.describe 'Last Airbender API' do
 
       expect(first_member).to have_key :affiliation
       expect(first_member[:affiliation]).to be_a String
-
     end
-  end
 end
