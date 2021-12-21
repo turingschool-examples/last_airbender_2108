@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'MemberFacade' do
-  it 'can get member details' do
+  xit 'can get member details' do
     member = MemberFacade.member_information('Fire Nation')
 
     expect(member). to be_a Array
