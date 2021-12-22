@@ -13,5 +13,8 @@ class MemberService
 
     json = JSON.parse(response.body, symbolize_names: true)
 
+    json.map do |data|
+      Member.new(data)
+    end
   end
 end
